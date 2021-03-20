@@ -4,6 +4,8 @@ from bottle import redirect, response, route, run, template
 import random as r
 from string import ascii_letters
 
+NAME_FILE = "names.csv"
+
 LIST = """<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <title>Email List - page {{page}}</title>
 <meta name=ROBOTS content="NOINDEX,NOFOLLOW">
