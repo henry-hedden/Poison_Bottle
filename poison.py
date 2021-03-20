@@ -1,8 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 from bottle import redirect, response, route, run, template
 import random as r
-from string import letters
+from string import ascii_letters
 
 LIST = """<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <title>Email List - page {{page}}</title>
@@ -25,8 +25,8 @@ LIST = """<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 
 def emails(n):
     r.seed(n)
-    return ["{}{}@{}.com".format(''.join([r.choice(letters) for l in range(3)]),
-            r.randrange(10000), ''.join([r.choice(letters) for l in range(10)]))
+    return ["{}{}@{}.com".format(''.join([r.choice(ascii_letters) for l in range(3)]),
+            r.randrange(10000), ''.join([r.choice(ascii_letters) for l in range(10)]))
             for e in range(20)]
 
 @route("/robots.txt")
